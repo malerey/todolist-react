@@ -22,22 +22,37 @@
     list-style: none;
     padding-left: 0;
     width: 325px;
+
   } 
-  .todoListMain .theList li {
+  
+  .liList {
+    height: 15px;
+    list-style: none;
     color: #333;
     background-color: rgba(255,255,255,.5);
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 5px;
-       transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
   }
    
-  .todoListMain .theList li:hover {
+  .liList:hover {
     background-color: #ADD8E6;
     cursor: pointer;
   }
-  
 
+  .liListInput {
+    font-size: 16px;
+    border: solid #FFF;
+    position: absolute;
+    margin-top: -48px;
+    margin-left: 13px;
+  }
+  
+  .DisplayNone {
+    display: none;   
+  }
+   
   ul.theList {
     padding: 0;
   }
@@ -47,6 +62,6 @@
     background-color: #0066FF;
     cursor: pointer;
     border-radius: 5px;
-    border: none;
+          border: none;
     color: white;
   }

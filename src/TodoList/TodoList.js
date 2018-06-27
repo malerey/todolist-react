@@ -14,6 +14,7 @@ class TodoList extends Component {
      
         this.addItem = this.addItem.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
+
       }
        
       addItem(e) {
@@ -31,9 +32,7 @@ class TodoList extends Component {
          
           this._inputElement.value = "";
         }
-         
         console.log(this.state.items);
-           
         e.preventDefault();
       }
 
@@ -47,6 +46,22 @@ class TodoList extends Component {
         });
       }
 
+      // editItem(text) {
+
+      //   console.log(text)
+
+      //   var editedItems = this.state.items.filter(function (item) {
+      //     return (item.text !== text);
+      //   });
+
+      //   this._inputElement.value = text
+       
+      //   this.setState({
+      //     items: editedItems
+          
+      //   });
+      // }
+
   render() {
     return (
     <div className="todoListMain">
@@ -58,7 +73,14 @@ class TodoList extends Component {
             <button type="submit">Agregar</button>
           </form>
         </div>
-        <TodoItems entries={this.state.items} delete={this.deleteItem}/>
+        <ul className="theList">
+          {this.state.items.map((item, i) => {
+            return(
+              <TodoItems key={i} entry={item}
+              delete={this.deleteItem}/>
+            )
+          })}
+        </ul>
       </div>
     );
   }
